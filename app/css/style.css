@@ -1,0 +1,1115 @@
+/**
+ * bullgrid
+ *
+ * A grid based on the ideas of inuit.css gridsystem. 
+ *
+ *
+ * @TODO [TimPietrusky] - center vertically / center horizontally 
+ * @TODO [TimPietrusky] - Add breakpoint mixin to the project
+ * @TODO [TimPietrusky] - Should we add support for IE <= 7?
+ *
+ *
+ */
+/**
+ * Fluid and nestable grid system, e.g.:
+ *
+   <div class="gw">
+
+     <div class="g one-third">
+       <p>One third grid</p>
+     </div>
+
+     <div class="g two-thirds">
+       <p>Two thirds grid</p>
+     </div>
+
+     <div class="g one-half">
+       <p>One half grid</p>
+     </div>
+
+     <div class="g one-quarter">
+       <p>One quarter grid</p>
+     </div>
+
+     <div class="g one-quarter">
+       <p>One quarter grid</p>
+     </div>
+
+   </div>
+
+   */
+/**
+ * Default spacing 
+ */
+/**
+ * Micro clearfix. 
+ */
+/* line 57, ../../src/scss/modules/_bullgrid.scss */
+.cf:after, .gw:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/**
+ * Grid wrapper
+ */
+/* line 71, ../../src/scss/modules/_bullgrid.scss */
+.gw {
+  /**
+   * Negative margin to negate the padding on the first grid child.
+   */
+  margin-left: -1.5em;
+  /**
+   * The following declarations allow us to use the `.gw` class on lists.
+   */
+  list-style: none;
+  margin-bottom: 0;
+}
+
+/**
+ * Reverse grid order
+ *
+   <div class="gw  gw--rev">
+
+     <div class="g  one-third">
+       <p>Appears on the right</p>
+     </div>
+
+     <div class="g  two-thirds">
+       <p>Appears on the left</p>
+     </div>
+
+   </div>
+ *
+ */
+/* line 106, ../../src/scss/modules/_bullgrid.scss */
+.gw--rev > .g {
+  float: right;
+}
+
+/**
+ * Very infrequently occuring grid wrappers as children of grid wrappers.
+ */
+/* line 117, ../../src/scss/modules/_bullgrid.scss */
+.gw > .gw {
+  margin-left: 0;
+}
+
+/**
+ * Grid
+ *
+ */
+/* line 129, ../../src/scss/modules/_bullgrid.scss */
+.g {
+  float: left;
+  padding-left: 1.5em;
+}
+
+/**
+ *
+ * Sizes in human readable format.
+ *
+ */
+/**
+ *
+ */
+/*
+ * Hidden
+ */
+/* line 150, ../../src/scss/modules/_bullgrid.scss */
+.hidden {
+  display: none;
+}
+
+/**
+ * Whole
+ */
+/* line 161, ../../src/scss/modules/_bullgrid.scss */
+.one-whole {
+  width: 100%;
+}
+
+/**
+ * Halves
+ */
+/* line 172, ../../src/scss/modules/_bullgrid.scss */
+.one-half, .two-quarters, .three-sixths, .four-eighths, .five-tenths, .six-twelfths {
+  width: 50%;
+}
+
+/**
+ * Thirds
+ */
+/* line 183, ../../src/scss/modules/_bullgrid.scss */
+.one-third, .two-sixths, .four-twelfths {
+  width: 33.333%;
+}
+
+/* line 186, ../../src/scss/modules/_bullgrid.scss */
+.two-thirds, .four-sixths, .eight-twelfths {
+  width: 66.666%;
+}
+
+/**
+ * Quarters
+ */
+/* line 197, ../../src/scss/modules/_bullgrid.scss */
+.one-quarter, .two-eighths, .three-twelfths {
+  width: 25%;
+}
+
+/* line 203, ../../src/scss/modules/_bullgrid.scss */
+.three-quarters, .six-eighths, .nine-twelfths {
+  width: 75%;
+}
+
+/**
+ * Fifths
+ */
+/* line 214, ../../src/scss/modules/_bullgrid.scss */
+.one-fifth, .two-tenths {
+  width: 20%;
+}
+
+/* line 217, ../../src/scss/modules/_bullgrid.scss */
+.two-fifths, .four-tenths {
+  width: 40%;
+}
+
+/* line 220, ../../src/scss/modules/_bullgrid.scss */
+.three-fifths, .six-tenths {
+  width: 60%;
+}
+
+/* line 223, ../../src/scss/modules/_bullgrid.scss */
+.four-fifths, .eight-tenths {
+  width: 80%;
+}
+
+/**
+ * Sixths
+ */
+/* line 234, ../../src/scss/modules/_bullgrid.scss */
+.one-sixth, .two-twelfths {
+  width: 16.666%;
+}
+
+/* line 246, ../../src/scss/modules/_bullgrid.scss */
+.five-sixths, .ten-twelfths {
+  width: 83.333%;
+}
+
+/**
+ * Eighths
+ */
+/* line 257, ../../src/scss/modules/_bullgrid.scss */
+.one-eighth {
+  width: 12.5%;
+}
+
+/* line 263, ../../src/scss/modules/_bullgrid.scss */
+.three-eighths {
+  width: 37.5%;
+}
+
+/* line 269, ../../src/scss/modules/_bullgrid.scss */
+.five-eighths {
+  width: 62.5%;
+}
+
+/* line 275, ../../src/scss/modules/_bullgrid.scss */
+.seven-eighths {
+  width: 87.5%;
+}
+
+/**
+ * Tenths
+ */
+/* line 286, ../../src/scss/modules/_bullgrid.scss */
+.one-tenth {
+  width: 10%;
+}
+
+/* line 292, ../../src/scss/modules/_bullgrid.scss */
+.three-tenths {
+  width: 30%;
+}
+
+/* line 304, ../../src/scss/modules/_bullgrid.scss */
+.seven-tenths {
+  width: 70%;
+}
+
+/* line 310, ../../src/scss/modules/_bullgrid.scss */
+.nine-tenths {
+  width: 90%;
+}
+
+/**
+ * Twelfths
+ */
+/* line 321, ../../src/scss/modules/_bullgrid.scss */
+.one-twelfth {
+  width: 8.333%;
+}
+
+/* line 333, ../../src/scss/modules/_bullgrid.scss */
+.five-twelfths {
+  width: 41.666%;
+}
+
+/* line 339, ../../src/scss/modules/_bullgrid.scss */
+.seven-twelfths {
+  width: 58.333%;
+}
+
+/* line 351, ../../src/scss/modules/_bullgrid.scss */
+.eleven-twelfths {
+  width: 91.666%;
+}
+
+/**
+ * Create the grids for different devices.
+ */
+@media (min-width: 70em) {
+  /*
+   * Hidden
+   */
+  /* line 150, ../../src/scss/modules/_bullgrid.scss */
+  .large-hidden {
+    display: none;
+  }
+
+  /**
+   * Whole
+   */
+  /* line 161, ../../src/scss/modules/_bullgrid.scss */
+  .large-one-whole {
+    width: 100%;
+  }
+
+  /**
+   * Halves
+   */
+  /* line 172, ../../src/scss/modules/_bullgrid.scss */
+  .large-one-half, .large-two-quarters, .large-three-sixths, .large-four-eighths, .large-five-tenths, .large-six-twelfths {
+    width: 50%;
+  }
+
+  /**
+   * Thirds
+   */
+  /* line 183, ../../src/scss/modules/_bullgrid.scss */
+  .large-one-third, .large-two-sixths, .large-four-twelfths {
+    width: 33.333%;
+  }
+
+  /* line 186, ../../src/scss/modules/_bullgrid.scss */
+  .large-two-thirds, .large-four-sixths, .large-eight-twelfths {
+    width: 66.666%;
+  }
+
+  /**
+   * Quarters
+   */
+  /* line 197, ../../src/scss/modules/_bullgrid.scss */
+  .large-one-quarter, .large-two-eighths, .large-three-twelfths {
+    width: 25%;
+  }
+
+  /* line 203, ../../src/scss/modules/_bullgrid.scss */
+  .large-three-quarters, .large-six-eighths, .large-nine-twelfths {
+    width: 75%;
+  }
+
+  /**
+   * Fifths
+   */
+  /* line 214, ../../src/scss/modules/_bullgrid.scss */
+  .large-one-fifth, .large-two-tenths {
+    width: 20%;
+  }
+
+  /* line 217, ../../src/scss/modules/_bullgrid.scss */
+  .large-two-fifths, .large-four-tenths {
+    width: 40%;
+  }
+
+  /* line 220, ../../src/scss/modules/_bullgrid.scss */
+  .large-three-fifths, .large-six-tenths {
+    width: 60%;
+  }
+
+  /* line 223, ../../src/scss/modules/_bullgrid.scss */
+  .large-four-fifths, .large-eight-tenths {
+    width: 80%;
+  }
+
+  /**
+   * Sixths
+   */
+  /* line 234, ../../src/scss/modules/_bullgrid.scss */
+  .large-one-sixth, .large-two-twelfths {
+    width: 16.666%;
+  }
+
+  /* line 246, ../../src/scss/modules/_bullgrid.scss */
+  .large-five-sixths, .large-ten-twelfths {
+    width: 83.333%;
+  }
+
+  /**
+   * Eighths
+   */
+  /* line 257, ../../src/scss/modules/_bullgrid.scss */
+  .large-one-eighth {
+    width: 12.5%;
+  }
+
+  /* line 263, ../../src/scss/modules/_bullgrid.scss */
+  .large-three-eighths {
+    width: 37.5%;
+  }
+
+  /* line 269, ../../src/scss/modules/_bullgrid.scss */
+  .large-five-eighths {
+    width: 62.5%;
+  }
+
+  /* line 275, ../../src/scss/modules/_bullgrid.scss */
+  .large-seven-eighths {
+    width: 87.5%;
+  }
+
+  /**
+   * Tenths
+   */
+  /* line 286, ../../src/scss/modules/_bullgrid.scss */
+  .large-one-tenth {
+    width: 10%;
+  }
+
+  /* line 292, ../../src/scss/modules/_bullgrid.scss */
+  .large-three-tenths {
+    width: 30%;
+  }
+
+  /* line 304, ../../src/scss/modules/_bullgrid.scss */
+  .large-seven-tenths {
+    width: 70%;
+  }
+
+  /* line 310, ../../src/scss/modules/_bullgrid.scss */
+  .large-nine-tenths {
+    width: 90%;
+  }
+
+  /**
+   * Twelfths
+   */
+  /* line 321, ../../src/scss/modules/_bullgrid.scss */
+  .large-one-twelfth {
+    width: 8.333%;
+  }
+
+  /* line 333, ../../src/scss/modules/_bullgrid.scss */
+  .large-five-twelfths {
+    width: 41.666%;
+  }
+
+  /* line 339, ../../src/scss/modules/_bullgrid.scss */
+  .large-seven-twelfths {
+    width: 58.333%;
+  }
+
+  /* line 351, ../../src/scss/modules/_bullgrid.scss */
+  .large-eleven-twelfths {
+    width: 91.666%;
+  }
+}
+@media (min-width: 50em) and (max-width: 70em) {
+  /*
+   * Hidden
+   */
+  /* line 150, ../../src/scss/modules/_bullgrid.scss */
+  .medium-hidden {
+    display: none;
+  }
+
+  /**
+   * Whole
+   */
+  /* line 161, ../../src/scss/modules/_bullgrid.scss */
+  .medium-one-whole {
+    width: 100%;
+  }
+
+  /**
+   * Halves
+   */
+  /* line 172, ../../src/scss/modules/_bullgrid.scss */
+  .medium-one-half, .medium-two-quarters, .medium-three-sixths, .medium-four-eighths, .medium-five-tenths, .medium-six-twelfths {
+    width: 50%;
+  }
+
+  /**
+   * Thirds
+   */
+  /* line 183, ../../src/scss/modules/_bullgrid.scss */
+  .medium-one-third, .medium-two-sixths, .medium-four-twelfths {
+    width: 33.333%;
+  }
+
+  /* line 186, ../../src/scss/modules/_bullgrid.scss */
+  .medium-two-thirds, .medium-four-sixths, .medium-eight-twelfths {
+    width: 66.666%;
+  }
+
+  /**
+   * Quarters
+   */
+  /* line 197, ../../src/scss/modules/_bullgrid.scss */
+  .medium-one-quarter, .medium-two-eighths, .medium-three-twelfths {
+    width: 25%;
+  }
+
+  /* line 203, ../../src/scss/modules/_bullgrid.scss */
+  .medium-three-quarters, .medium-six-eighths, .medium-nine-twelfths {
+    width: 75%;
+  }
+
+  /**
+   * Fifths
+   */
+  /* line 214, ../../src/scss/modules/_bullgrid.scss */
+  .medium-one-fifth, .medium-two-tenths {
+    width: 20%;
+  }
+
+  /* line 217, ../../src/scss/modules/_bullgrid.scss */
+  .medium-two-fifths, .medium-four-tenths {
+    width: 40%;
+  }
+
+  /* line 220, ../../src/scss/modules/_bullgrid.scss */
+  .medium-three-fifths, .medium-six-tenths {
+    width: 60%;
+  }
+
+  /* line 223, ../../src/scss/modules/_bullgrid.scss */
+  .medium-four-fifths, .medium-eight-tenths {
+    width: 80%;
+  }
+
+  /**
+   * Sixths
+   */
+  /* line 234, ../../src/scss/modules/_bullgrid.scss */
+  .medium-one-sixth, .medium-two-twelfths {
+    width: 16.666%;
+  }
+
+  /* line 246, ../../src/scss/modules/_bullgrid.scss */
+  .medium-five-sixths, .medium-ten-twelfths {
+    width: 83.333%;
+  }
+
+  /**
+   * Eighths
+   */
+  /* line 257, ../../src/scss/modules/_bullgrid.scss */
+  .medium-one-eighth {
+    width: 12.5%;
+  }
+
+  /* line 263, ../../src/scss/modules/_bullgrid.scss */
+  .medium-three-eighths {
+    width: 37.5%;
+  }
+
+  /* line 269, ../../src/scss/modules/_bullgrid.scss */
+  .medium-five-eighths {
+    width: 62.5%;
+  }
+
+  /* line 275, ../../src/scss/modules/_bullgrid.scss */
+  .medium-seven-eighths {
+    width: 87.5%;
+  }
+
+  /**
+   * Tenths
+   */
+  /* line 286, ../../src/scss/modules/_bullgrid.scss */
+  .medium-one-tenth {
+    width: 10%;
+  }
+
+  /* line 292, ../../src/scss/modules/_bullgrid.scss */
+  .medium-three-tenths {
+    width: 30%;
+  }
+
+  /* line 304, ../../src/scss/modules/_bullgrid.scss */
+  .medium-seven-tenths {
+    width: 70%;
+  }
+
+  /* line 310, ../../src/scss/modules/_bullgrid.scss */
+  .medium-nine-tenths {
+    width: 90%;
+  }
+
+  /**
+   * Twelfths
+   */
+  /* line 321, ../../src/scss/modules/_bullgrid.scss */
+  .medium-one-twelfth {
+    width: 8.333%;
+  }
+
+  /* line 333, ../../src/scss/modules/_bullgrid.scss */
+  .medium-five-twelfths {
+    width: 41.666%;
+  }
+
+  /* line 339, ../../src/scss/modules/_bullgrid.scss */
+  .medium-seven-twelfths {
+    width: 58.333%;
+  }
+
+  /* line 351, ../../src/scss/modules/_bullgrid.scss */
+  .medium-eleven-twelfths {
+    width: 91.666%;
+  }
+}
+@media (max-width: 50em) {
+  /*
+   * Hidden
+   */
+  /* line 150, ../../src/scss/modules/_bullgrid.scss */
+  .small-hidden {
+    display: none;
+  }
+
+  /**
+   * Whole
+   */
+  /* line 161, ../../src/scss/modules/_bullgrid.scss */
+  .small-one-whole {
+    width: 100%;
+  }
+
+  /**
+   * Halves
+   */
+  /* line 172, ../../src/scss/modules/_bullgrid.scss */
+  .small-one-half, .small-two-quarters, .small-three-sixths, .small-four-eighths, .small-five-tenths, .small-six-twelfths {
+    width: 50%;
+  }
+
+  /**
+   * Thirds
+   */
+  /* line 183, ../../src/scss/modules/_bullgrid.scss */
+  .small-one-third, .small-two-sixths, .small-four-twelfths {
+    width: 33.333%;
+  }
+
+  /* line 186, ../../src/scss/modules/_bullgrid.scss */
+  .small-two-thirds, .small-four-sixths, .small-eight-twelfths {
+    width: 66.666%;
+  }
+
+  /**
+   * Quarters
+   */
+  /* line 197, ../../src/scss/modules/_bullgrid.scss */
+  .small-one-quarter, .small-two-eighths, .small-three-twelfths {
+    width: 25%;
+  }
+
+  /* line 203, ../../src/scss/modules/_bullgrid.scss */
+  .small-three-quarters, .small-six-eighths, .small-nine-twelfths {
+    width: 75%;
+  }
+
+  /**
+   * Fifths
+   */
+  /* line 214, ../../src/scss/modules/_bullgrid.scss */
+  .small-one-fifth, .small-two-tenths {
+    width: 20%;
+  }
+
+  /* line 217, ../../src/scss/modules/_bullgrid.scss */
+  .small-two-fifths, .small-four-tenths {
+    width: 40%;
+  }
+
+  /* line 220, ../../src/scss/modules/_bullgrid.scss */
+  .small-three-fifths, .small-six-tenths {
+    width: 60%;
+  }
+
+  /* line 223, ../../src/scss/modules/_bullgrid.scss */
+  .small-four-fifths, .small-eight-tenths {
+    width: 80%;
+  }
+
+  /**
+   * Sixths
+   */
+  /* line 234, ../../src/scss/modules/_bullgrid.scss */
+  .small-one-sixth, .small-two-twelfths {
+    width: 16.666%;
+  }
+
+  /* line 246, ../../src/scss/modules/_bullgrid.scss */
+  .small-five-sixths, .small-ten-twelfths {
+    width: 83.333%;
+  }
+
+  /**
+   * Eighths
+   */
+  /* line 257, ../../src/scss/modules/_bullgrid.scss */
+  .small-one-eighth {
+    width: 12.5%;
+  }
+
+  /* line 263, ../../src/scss/modules/_bullgrid.scss */
+  .small-three-eighths {
+    width: 37.5%;
+  }
+
+  /* line 269, ../../src/scss/modules/_bullgrid.scss */
+  .small-five-eighths {
+    width: 62.5%;
+  }
+
+  /* line 275, ../../src/scss/modules/_bullgrid.scss */
+  .small-seven-eighths {
+    width: 87.5%;
+  }
+
+  /**
+   * Tenths
+   */
+  /* line 286, ../../src/scss/modules/_bullgrid.scss */
+  .small-one-tenth {
+    width: 10%;
+  }
+
+  /* line 292, ../../src/scss/modules/_bullgrid.scss */
+  .small-three-tenths {
+    width: 30%;
+  }
+
+  /* line 304, ../../src/scss/modules/_bullgrid.scss */
+  .small-seven-tenths {
+    width: 70%;
+  }
+
+  /* line 310, ../../src/scss/modules/_bullgrid.scss */
+  .small-nine-tenths {
+    width: 90%;
+  }
+
+  /**
+   * Twelfths
+   */
+  /* line 321, ../../src/scss/modules/_bullgrid.scss */
+  .small-one-twelfth {
+    width: 8.333%;
+  }
+
+  /* line 333, ../../src/scss/modules/_bullgrid.scss */
+  .small-five-twelfths {
+    width: 41.666%;
+  }
+
+  /* line 339, ../../src/scss/modules/_bullgrid.scss */
+  .small-seven-twelfths {
+    width: 58.333%;
+  }
+
+  /* line 351, ../../src/scss/modules/_bullgrid.scss */
+  .small-eleven-twelfths {
+    width: 91.666%;
+  }
+}
+@media (min-width: 90em) {
+  /*
+   * Hidden
+   */
+  /* line 150, ../../src/scss/modules/_bullgrid.scss */
+  .ultralarge-hidden {
+    display: none;
+  }
+
+  /**
+   * Whole
+   */
+  /* line 161, ../../src/scss/modules/_bullgrid.scss */
+  .ultralarge-one-whole {
+    width: 100%;
+  }
+
+  /**
+   * Halves
+   */
+  /* line 172, ../../src/scss/modules/_bullgrid.scss */
+  .ultralarge-one-half, .ultralarge-two-quarters, .ultralarge-three-sixths, .ultralarge-four-eighths, .ultralarge-five-tenths, .ultralarge-six-twelfths {
+    width: 50%;
+  }
+
+  /**
+   * Thirds
+   */
+  /* line 183, ../../src/scss/modules/_bullgrid.scss */
+  .ultralarge-one-third, .ultralarge-two-sixths, .ultralarge-four-twelfths {
+    width: 33.333%;
+  }
+
+  /* line 186, ../../src/scss/modules/_bullgrid.scss */
+  .ultralarge-two-thirds, .ultralarge-four-sixths, .ultralarge-eight-twelfths {
+    width: 66.666%;
+  }
+
+  /**
+   * Quarters
+   */
+  /* line 197, ../../src/scss/modules/_bullgrid.scss */
+  .ultralarge-one-quarter, .ultralarge-two-eighths, .ultralarge-three-twelfths {
+    width: 25%;
+  }
+
+  /* line 203, ../../src/scss/modules/_bullgrid.scss */
+  .ultralarge-three-quarters, .ultralarge-six-eighths, .ultralarge-nine-twelfths {
+    width: 75%;
+  }
+
+  /**
+   * Fifths
+   */
+  /* line 214, ../../src/scss/modules/_bullgrid.scss */
+  .ultralarge-one-fifth, .ultralarge-two-tenths {
+    width: 20%;
+  }
+
+  /* line 217, ../../src/scss/modules/_bullgrid.scss */
+  .ultralarge-two-fifths, .ultralarge-four-tenths {
+    width: 40%;
+  }
+
+  /* line 220, ../../src/scss/modules/_bullgrid.scss */
+  .ultralarge-three-fifths, .ultralarge-six-tenths {
+    width: 60%;
+  }
+
+  /* line 223, ../../src/scss/modules/_bullgrid.scss */
+  .ultralarge-four-fifths, .ultralarge-eight-tenths {
+    width: 80%;
+  }
+
+  /**
+   * Sixths
+   */
+  /* line 234, ../../src/scss/modules/_bullgrid.scss */
+  .ultralarge-one-sixth, .ultralarge-two-twelfths {
+    width: 16.666%;
+  }
+
+  /* line 246, ../../src/scss/modules/_bullgrid.scss */
+  .ultralarge-five-sixths, .ultralarge-ten-twelfths {
+    width: 83.333%;
+  }
+
+  /**
+   * Eighths
+   */
+  /* line 257, ../../src/scss/modules/_bullgrid.scss */
+  .ultralarge-one-eighth {
+    width: 12.5%;
+  }
+
+  /* line 263, ../../src/scss/modules/_bullgrid.scss */
+  .ultralarge-three-eighths {
+    width: 37.5%;
+  }
+
+  /* line 269, ../../src/scss/modules/_bullgrid.scss */
+  .ultralarge-five-eighths {
+    width: 62.5%;
+  }
+
+  /* line 275, ../../src/scss/modules/_bullgrid.scss */
+  .ultralarge-seven-eighths {
+    width: 87.5%;
+  }
+
+  /**
+   * Tenths
+   */
+  /* line 286, ../../src/scss/modules/_bullgrid.scss */
+  .ultralarge-one-tenth {
+    width: 10%;
+  }
+
+  /* line 292, ../../src/scss/modules/_bullgrid.scss */
+  .ultralarge-three-tenths {
+    width: 30%;
+  }
+
+  /* line 304, ../../src/scss/modules/_bullgrid.scss */
+  .ultralarge-seven-tenths {
+    width: 70%;
+  }
+
+  /* line 310, ../../src/scss/modules/_bullgrid.scss */
+  .ultralarge-nine-tenths {
+    width: 90%;
+  }
+
+  /**
+   * Twelfths
+   */
+  /* line 321, ../../src/scss/modules/_bullgrid.scss */
+  .ultralarge-one-twelfth {
+    width: 8.333%;
+  }
+
+  /* line 333, ../../src/scss/modules/_bullgrid.scss */
+  .ultralarge-five-twelfths {
+    width: 41.666%;
+  }
+
+  /* line 339, ../../src/scss/modules/_bullgrid.scss */
+  .ultralarge-seven-twelfths {
+    width: 58.333%;
+  }
+
+  /* line 351, ../../src/scss/modules/_bullgrid.scss */
+  .ultralarge-eleven-twelfths {
+    width: 91.666%;
+  }
+}
+/**
+ *
+ * Animation 
+ *
+ */
+/**
+ *
+ * Keyframes
+ *
+ */
+/**
+ *
+ * Placeholder
+ *
+ */
+@font-face {
+  font-family: 'noticia_textbold';
+  src: url("../fonts/noticiatext-bold-webfont.eot");
+  src: url("../fonts/noticiatext-bold-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/noticiatext-bold-webfont.woff") format("woff"), url("../fonts/noticiatext-bold-webfont.ttf") format("truetype"), url("../fonts/noticiatext-bold-webfont.svg#noticia_textbold") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'noticia_textregular';
+  src: url("../fonts/noticiatext-regular-webfont.eot");
+  src: url("../fonts/noticiatext-regular-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/noticiatext-regular-webfont.woff") format("woff"), url("../fonts/noticiatext-regular-webfont.ttf") format("truetype"), url("../fonts/noticiatext-regular-webfont.svg#noticia_textregular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'merriweather_sansbold';
+  src: url("../fonts/merriweathersans-bold-webfont.eot");
+  src: url("../fonts/merriweathersans-bold-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/merriweathersans-bold-webfont.woff") format("woff"), url("../fonts/merriweathersans-bold-webfont.ttf") format("truetype"), url("../fonts/merriweathersans-bold-webfont.svg#merriweather_sansbold") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'merriweather_sansregular';
+  src: url("../fonts/merriweathersans-regular-webfont.eot");
+  src: url("../fonts/merriweathersans-regular-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/merriweathersans-regular-webfont.woff") format("woff"), url("../fonts/merriweathersans-regular-webfont.ttf") format("truetype"), url("../fonts/merriweathersans-regular-webfont.svg#merriweather_sansregular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* line 3, ../../src/scss/components/_form.scss */
+.form input,
+.form textarea {
+  width: 100%;
+  padding: 0.5em;
+  border: 0.1em solid #f7f7f7;
+  background: white;
+  font: inherit;
+}
+/* line 35, ../../src/scss/modules/_mixins.scss */
+.form input::-webkit-input-placeholder,
+.form textarea::-webkit-input-placeholder {
+  color: #3c1667;
+}
+/* line 36, ../../src/scss/modules/_mixins.scss */
+.form input:-moz-placeholder,
+.form textarea:-moz-placeholder {
+  color: #3c1667;
+}
+/* line 37, ../../src/scss/modules/_mixins.scss */
+.form input::-moz-placeholder,
+.form textarea::-moz-placeholder {
+  color: #3c1667;
+}
+/* line 38, ../../src/scss/modules/_mixins.scss */
+.form input:-ms-input-placeholder,
+.form textarea:-ms-input-placeholder {
+  color: #3c1667;
+}
+
+/* line 1, ../../src/scss/components/_list.scss */
+ul {
+  list-style: none;
+  margin: 0;
+}
+
+/* line 1, ../../src/scss/components/_typography.scss */
+h1 {
+  font-size: 1.8em;
+  font-weight: normal;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+/* line 9, ../../src/scss/components/_typography.scss */
+h2 {
+  text-align: center;
+  font: 3.25em/1 "noticia_textbold", sans-serif;
+}
+/* line 13, ../../src/scss/components/_typography.scss */
+h2 span {
+  color: #ff382e;
+  font-size: 2.25em;
+  text-transform: uppercase;
+}
+
+/* line 25, ../../src/scss/components/_typography.scss */
+p {
+  color: #645d73;
+}
+
+/* line 1, ../../src/scss/components/_header.scss */
+.page-header {
+  background: #9ae6d9;
+  padding: 1em;
+}
+
+/* line 1, ../../src/scss/components/_navigation.scss */
+.navigation {
+  text-align: right;
+}
+/* line 4, ../../src/scss/components/_navigation.scss */
+.navigation a {
+  background: white;
+  color: #ff382e;
+  border: none;
+  padding: 0.5em;
+  border-radius: 10%;
+}
+
+/* line 1, ../../src/scss/components/_decoration.scss */
+.strong {
+  font-family: "merriweather_sansbold", sans-serif;
+  color: #3c1667;
+}
+
+/* line 6, ../../src/scss/components/_decoration.scss */
+.important {
+  color: #ff382e;
+  font-size: 1.75em;
+}
+
+/* line 16, ../../src/scss/components/_decoration.scss */
+.align-left {
+  text-align: left;
+}
+
+/* line 20, ../../src/scss/components/_decoration.scss */
+.align-right {
+  text-align: right;
+}
+
+/* line 24, ../../src/scss/components/_decoration.scss */
+.align-center {
+  text-align: center;
+}
+
+/* line 1, ../../src/scss/components/_buttons.scss */
+.button {
+  background: #ff382e;
+  text-align: center;
+  width: 100%;
+  padding: 0.5em 0;
+  text-transform: uppercase;
+  border: none;
+  font: inherit;
+  color: white;
+  cursor: pointer;
+}
+
+/* line 1, ../../src/scss/components/_box.scss */
+.box {
+  margin: 1em 0;
+}
+
+/* line 6, ../../src/scss/components/_box.scss */
+.box--white {
+  background: #fff;
+  padding: 0.5em;
+}
+
+/* line 1, ../../src/scss/core/_app.scss */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 6, ../../src/scss/core/_app.scss */
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+/* line 11, ../../src/scss/core/_app.scss */
+body {
+  font: 1em/1.5 "merriweather_sansregular", sans-serif;
+  color: #3c1667;
+  margin: 0;
+  background: #f7f7f7;
+}
+
+/* line 18, ../../src/scss/core/_app.scss */
+a {
+  text-decoration: none;
+  border-bottom: 0.1em solid #cccccc;
+  padding-bottom: .15em;
+}
+/* line 23, ../../src/scss/core/_app.scss */
+a.reset {
+  border: none;
+  padding: 0;
+}
+
+/* line 29, ../../src/scss/core/_app.scss */
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}

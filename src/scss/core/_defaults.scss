@@ -1,0 +1,20 @@
+// Font
+$default-font: 'merriweather_sansregular', sans-serif;
+$default-font-bold: 'merriweather_sansbold', sans-serif;
+
+// Padding
+$default-padding: .5em;
+
+// Margin
+$default-margin: 1em;
+
+// Spacing (e.g. grid)
+$default-spacing: 1.5em;
+
+// Color
+$default-color: $color-white;
+
+// Transition
+$default-transition-duration: .15s;
+$default-transition-function: ease-in-out;
+$default-transition: $default-transition-duration $default-transition-function;

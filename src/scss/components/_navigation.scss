@@ -1,0 +1,11 @@
+.navigation {
+  text-align: right;
+
+  a {
+    background: $color-white;
+    color: $color-red;
+    border: none;
+    padding: $default-padding;
+    border-radius: 10%;
+  }
+}

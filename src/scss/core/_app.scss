@@ -1,0 +1,32 @@
+* {
+  @include box-sizing(border-box);
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  font: 1em/1.5 $default-font;
+  color: $color-purple;
+  margin: 0;
+  background: $color-grey-light;
+}
+
+a {
+  text-decoration: none;
+  border-bottom: .1em solid $color-grey;
+  padding-bottom: .15em;
+
+  &.reset {
+    border: none;
+    padding: 0;
+  }
+}
+
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}

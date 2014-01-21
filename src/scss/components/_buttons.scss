@@ -1,0 +1,11 @@
+.button {
+  background: $color-red;
+  text-align: center;
+  width: 100%;
+  padding: $default-padding 0;
+  text-transform: uppercase;
+  border: none;
+  font: inherit;
+  color: $color-white;
+  cursor: pointer;
+}

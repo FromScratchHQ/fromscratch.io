@@ -1,0 +1,14 @@
+.form {
+  input,
+  textarea {
+    width: 100%;
+    padding: $default-padding;
+    border: .1em solid $color-grey-light;
+    background: lighten($color-grey-light, 15%);
+    font: inherit;
+
+    @include placeholder {
+      color: $color-purple;
+    }
+  }
+}
